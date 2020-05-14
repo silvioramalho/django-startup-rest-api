@@ -1,0 +1,28 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %}Ativação da conta em {{ site_name }}{% endblocktrans %}
+{% endblock subject %}
+
+{% block text_body %}
+{% blocktrans %}Você está recebendo este e-mail porque precisa concluir o processo de ativação em {{ site_name }}.{% endblocktrans %}
+
+{% trans "Acesse a página abaixo para ativar a conta:" %}
+{{ protocol }}://{{ frontend }}/{{ url|safe }}
+
+{% trans "Obrigado por usar o nosso site!" %}
+
+{% blocktrans %}The {{ site_name }} team{% endblocktrans %}
+{% endblock text_body %}
+
+{% block html_body %}
+<p>{% blocktrans %}Você está recebendo este e-mail porque precisa concluir o processo de ativação em {{ site_name }}.{% endblocktrans %}</p>
+
+<p>{% trans "Acesse a página abaixo para ativar a conta:" %}</p>
+<p><a href="{{ protocol }}://{{ frontend }}/{{ url|safe }}">{{ protocol }}://{{ frontend }}/{{ url|safe }}</a></p>
+
+<p>{% trans "Obrigado por usar o nosso site!" %}</p>
+
+<p>{% blocktrans %}The {{ site_name }} team{% endblocktrans %}</p>
+
+{% endblock html_body %}
