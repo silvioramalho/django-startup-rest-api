@@ -6,7 +6,7 @@ django-debug-toolbar==2.1
 django-otp==0.7.3
 django-request-logging==0.7.0
 django-templated-mail==1.1.1
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 djangorestframework-jwt==1.11.0
 djangorestframework-simplejwt==4.3.0
 djoser==2.0.3
