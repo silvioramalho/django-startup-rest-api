@@ -1,4 +1,4 @@
-from django.conf.urls import re_path
+from django.urls import re_path
 from django.urls import path
 from djoser import views as djoser_views
 from drf_jwt import views as jwt_views
