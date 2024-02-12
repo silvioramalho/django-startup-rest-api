@@ -11,12 +11,12 @@ def jwt_decode_handler(token, isRefresh=False):
             'verify_exp': False,
         }
 
-    unverified_payload = jwt.decode(token, None, False)
+    unverified_payload = jwt.decode(token, options={"verify_signature": False})
     secret_key = jwt_get_secret_key(unverified_payload)
     return jwt.decode(
         token,
-        api_settings.JWT_PUBLIC_KEY or secret_key,
-        api_settings.JWT_VERIFY,
+        key=api_settings.JWT_PUBLIC_KEY or secret_key,
+        verify=api_settings.JWT_VERIFY,
         options=options,
         leeway=api_settings.JWT_LEEWAY,
         audience=api_settings.JWT_AUDIENCE,
